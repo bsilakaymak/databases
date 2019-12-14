@@ -71,7 +71,7 @@ app.get('/createprojectstable', (req, res) => {
  });
  });
  tables.employees.forEach(employee => {
-   const sql=`INSERT INTO employeeS SET ?`;
+   const sql=`INSERT INTO employees SET ?`;
    connection.query(sql, employee, (err, result) => {
      if (err) throw err;
      console.log(result);
