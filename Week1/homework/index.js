@@ -17,7 +17,7 @@ connection.connect(error => {
   console.log("Connected to MySqL");
 });
 
-//creating three tables
+//creating company database
 app.get('/createdb', (req, res) => {
   const sql = `CREATE DATABASE company`;
   connection.query(sql, (error, result) => {
@@ -26,6 +26,8 @@ app.get('/createdb', (req, res) => {
   });
   res.send('database created');
 });
+
+//creating three tables
 
 //--------------employees
 app.get('/createemployeetable', (req, res) => {
