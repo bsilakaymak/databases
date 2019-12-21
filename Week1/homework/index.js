@@ -2,14 +2,13 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
-const tables = require('./tables.js');
 
 //creating connection to mysql
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'hyfuser',
   password: 'hyfpassword',
-  database: 'company'
+  database: 'week2'
 });
 
 connection.connect(error => {
@@ -33,7 +32,8 @@ app.get('/createdb', (req, res) => {
 app.get('/createemployeetable', (req, res) => {
   const sql = `
   CREATE TABLE employees(
-    emp_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY, emp_name VARCHAR(50) NOT NULL, salary INT NOT NULL,reports_to INT NOT NULL );`;
+    emp_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+    emp_name VARCHAR(50) NOT NULL, salary INT NOT NULL,reports_to INT NOT NULL );`;
   connection.query(sql, (error, result) => {
       if (error) throw error;
       console.log(result);
