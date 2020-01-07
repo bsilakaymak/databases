@@ -21,6 +21,6 @@ queries(`SELECT first.full_name AS 'Employee Name',
                 WHERE first.employee_no = second.manager;`);
 
 queries(`SELECT employees.full_name AS 'Employee name', departments.title AS 'Department Name' FROM employees
-         JOIN departments ON employees.dept_no = departments.dept_no; `)
+         RIGHT JOIN departments ON employees.dept_no = departments.dept_no; `)
 
 connection.end(); 

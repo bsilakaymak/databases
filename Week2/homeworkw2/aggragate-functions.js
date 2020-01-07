@@ -19,8 +19,8 @@ function queries(sql) {
 }
 
 // All department numbers and the number of employees working there.
-queries(`SELECT departments.dept_no, departments.title, count(employee_no) from employees
- JOIN departments ON departments.dept_no = employees.dept_no`);
+queries(`SELECT departments.dept_no, departments.title, COUNT(employee_no) from employees
+ JOIN departments ON departments.dept_no = employees.dept_no GROUP BY departments.dept_no`);
 
 // Sum of the salaries of all employees.
 queries(`SELECT SUM(salary) FROM employees;`);
