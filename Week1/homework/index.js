@@ -21,19 +21,19 @@ function queries(sql) {
 
 //create employees table
 queries(`
-CREATE TABLE employees(
+CREATE TABLE IF NOT EXISTS employees(
   emp_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   emp_name VARCHAR(50) NOT NULL, 
   salary INT NOT NULL,
   reports_to INT NOT NULL );`)
 //create departments table
 queries(`
-CREATE TABLE departments(
+CREATE TABLE IF NOT EXISTS departments(
     dept_no INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
     dept_name VARCHAR(50) NOT NULL, 
     manager INT NOT NULL);`);
 //create projects table
-queries( `CREATE TABLE projects(
+queries( `CREATE TABLE IF NOT EXISTS projects(
     proj_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
     proj_name VARCHAR(50) NOT NULL, 
     starting_date DATE NOT NULL, 
