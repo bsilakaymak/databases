@@ -1,11 +1,3 @@
-const mysql = require("mysql");
-
-const conn = mysql.createConnection({
-  host: "localhost",
-  user: "hyfuser",
-  password: "hyfpassword",
-  database: "deneme"
-});
 
 //"1; CREATE TABLE cities(name VARCHAR(50), pop INT); --" creates a new table
 //"1; INSERT INTO cities (name, pop) VALUES ('Gotham', 100);--"  adds values
